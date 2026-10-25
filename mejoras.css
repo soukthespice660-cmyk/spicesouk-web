@@ -1,0 +1,566 @@
+/* Mejoras sobre la web original */
+.wa-cta{gap:10px;background:#25a05a;border-color:#25a05a;color:#fff;font-weight:700;text-decoration:none}
+.wa-cta:hover{background:#1f8a4d;border-color:#1f8a4d}
+.wa-cta svg{flex:none}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:29px}
+.hero-actions .primary{margin-top:0}
+.ghost-link{color:var(--cream);font-size:14px;font-weight:600;text-underline-offset:5px;padding:12px 4px;min-height:44px;display:inline-flex;align-items:center}
+.order-facts{list-style:none;margin:0;padding:14px 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;background:var(--navy);color:var(--cream);font-size:13px;font-weight:600;line-height:1.4;text-align:center}
+.order-facts li::before{content:"";display:inline-block;width:7px;height:7px;margin-inline-end:9px;background:var(--gold);border-radius:50%;vertical-align:middle}
+.faq{padding-block:56px 20px;max-width:820px}
+.faq h2{font-size:clamp(28px,4vw,40px);margin:0 0 20px}
+.faq details{border-top:1px solid var(--line);padding:4px 0}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:600;padding:16px 4px;min-height:48px;list-style-position:inside;color:var(--navy)}
+.faq p{margin:0 0 16px;padding:0 4px;line-height:1.65;color:var(--muted);font-size:15px}
+.local-wa{margin:0 14px 10px 0}
+.wa-float{position:fixed;z-index:4;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));margin:0;min-height:52px;padding:12px 22px;border-radius:999px;box-shadow:0 8px 24px #03233440}
+@media(max-width:640px){.wa-float{right:92px;left:16px;padding-inline:14px}.hero-actions{flex-direction:column;align-items:stretch;gap:4px}.hero-actions .ghost-link{justify-content:center}body{padding-bottom:84px}.order-facts{justify-content:flex-start;text-align:left;padding:14px 20px;gap:6px}.order-facts li{width:100%}}
+:focus-visible{outline-offset:3px}
+
+/* ===== Capa visual: sobria, de alta cocina ===== */
+:root{--ivory:#F6F0E4;--ink:#14232B;--brand-gold:#B88A2E;--hair:rgba(184,138,46,.5)}
+.announcement{letter-spacing:.2em;font-size:10.5px;text-transform:uppercase;padding-block:9px}
+.eyebrow{letter-spacing:.28em;font-size:10.5px;font-weight:500}
+h1,h2{font-weight:400}
+.welcome-hero h1{font-weight:400;letter-spacing:.005em}
+.section-heading h2,.heritage h2,.how-section h2,.faq h2,.local-cuisine h2,.offers-signup h2{font-weight:400;letter-spacing:.005em}
+/* botones: rectos, finos, sin cristal */
+.primary,.add-button,.category,.secondary,.bag-button,.quantity button{border-radius:2px;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;font-weight:600}
+.hero .primary,.card-content .add-button,.wa-cta{background:var(--brand-gold);border-color:var(--brand-gold);color:#0d1d25;box-shadow:none}
+.hero .primary:hover,.card-content .add-button:hover,.wa-cta:hover{background:#cfa14a;border-color:#cfa14a;color:#0d1d25}
+.hero .primary.wa-cta{padding:18px 30px;min-height:56px}
+.ghost-link{letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:3px;min-height:0;margin-inline-start:6px}
+.wa-float{background:#0d1d25;border:1px solid var(--brand-gold);color:var(--ivory);box-shadow:0 10px 30px #0006}
+.wa-float:hover{background:#142d3a;border-color:#d4a84f;color:#fff}
+.wa-float svg{color:#3fbf72}
+.local-wa{margin-inline-end:16px}
+/* franja de condiciones */
+.order-facts{background:var(--ivory);color:var(--ink);border-block:1px solid var(--hair);letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:600;padding:20px 24px;gap:10px 44px}
+.order-facts li::before{content:"";width:5px;height:5px;border-radius:0;transform:rotate(45deg);background:var(--brand-gold);margin-inline-end:12px;vertical-align:2px}
+.flavour-strip{background:var(--ivory);border-bottom:0;color:#8a6a2a;letter-spacing:.3em}
+/* carta: tarjetas sobrias (el arco se mantiene) */
+.food-card{background:var(--paper);border:1px solid var(--hair);box-shadow:none}
+.food-card:hover{border-color:var(--brand-gold);box-shadow:0 14px 34px #4a350f14}
+.card-content{background:var(--paper)!important;color:var(--ink)!important;border-top:1px solid var(--hair)!important}
+.card-content::before{display:none!important}
+.card-content h3{color:var(--ink);font-weight:500;letter-spacing:0}
+.card-content>p:not(.card-category),.card-content .card-price.pending{color:#4d5a60!important}
+.card-category{color:#8a6a2a!important;letter-spacing:.22em;font-weight:600}
+.card-content .card-price{font-variant-numeric:lining-nums;color:var(--ink);font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:.01em}
+.card-bottom{border-top:1px solid #e6d9bb;margin-top:auto}
+.card-content .add-button{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.card-content .add-button:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.categories .category{background:transparent;border:1px solid #cdbf9f;color:var(--ink);letter-spacing:.1em}
+.categories .category[aria-pressed=true],.categories .category.active{background:var(--ink);border-color:var(--ink);color:var(--ivory)}
+/* separadores y bloques inferiores */
+.how-section{background:var(--ivory)}
+.steps article span{font-family:var(--serif);color:var(--brand-gold);font-weight:400}
+.faq summary{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:0;text-transform:none}
+.faq details{border-color:var(--hair)}
+.faq details:last-of-type{border-color:var(--hair)}
+.local-cuisine .primary{margin-top:0}
+.footer-main .wordmark span{letter-spacing:.3em}
+:focus-visible{outline:2px solid var(--brand-gold);outline-offset:3px}
+@media(max-width:640px){
+ .order-facts{padding:18px 20px;gap:8px}
+ .hero .primary.wa-cta{width:100%}
+ .wa-float{padding-inline:16px}
+ .card-content .card-price{font-size:20px}
+}
+/* aviso de cookies en escritorio: franja baja, no tapa el boton de pedir */
+@media(min-width:641px){
+ .analytics-consent{inset:auto 0 0 0;max-width:none;margin:0;border-radius:0;border-width:1px 0 0;padding:14px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;max-height:none}
+ .analytics-consent h2{font-size:20px;margin:0;flex:none}
+ .analytics-consent p{margin:0;flex:1 1 420px;font-size:13px;line-height:1.5}
+ .analytics-consent a{flex:none}
+ .analytics-consent-actions{margin:0;flex:none}
+ .analytics-consent-actions button{min-width:150px;min-height:42px;border-radius:2px;text-transform:uppercase;letter-spacing:.12em;font-size:11px}
+}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:28px;line-height:1;color:var(--brand-gold)}
+.faq details[open] summary::after{content:"\2212"}
+@media(max-width:640px){.food-grid .add-button{letter-spacing:.05em;font-size:10px;padding-inline:4px}}
+
+/* ===== Segunda pasada: cabecera, hero, secciones, pie ===== */
+:root{--cream:#F5EFE3;--navy:#0B2531;--gold:#C9A25A;--terracotta:#8F3A24;--line:#D9CBAA}
+body{background:var(--cream);color:var(--ink)}
+.announcement{background:#060607;color:#C9A25A;border-bottom:1px solid rgba(201,162,90,.25)}
+/* cabecera: limpia, sin caja de cristal */
+.header-shell{background:linear-gradient(180deg,rgba(6,24,32,.92),rgba(6,24,32,.55) 70%,rgba(6,24,32,0));border-bottom:0;box-shadow:none;backdrop-filter:none}
+.header-shell::before,.header-shell::after{display:none!important}
+.header-shell .site-header{border-bottom:1px solid rgba(201,162,90,.35);min-height:96px;padding-block:14px;width:min(1320px,calc(100% - 64px));margin-inline:auto}
+.site-header .wordmark{border-inline-end:0;padding-inline-end:0}
+.site-header nav{gap:40px}
+.site-header nav a,.site-header nav a.how-link,.site-header nav a.offers-nav-link{background:transparent!important;border:0!important;border-bottom:1px solid transparent!important;border-radius:0!important;padding:6px 0;min-height:0;font-size:11.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#F1E8D4;box-shadow:none}
+.site-header nav a:hover{color:var(--gold);border-bottom-color:var(--gold)!important}
+.site-header nav a.offers-nav-link{color:var(--gold)}
+.site-header .language-switcher select,.site-header .bag-button{background:transparent;border:1px solid rgba(201,162,90,.5);border-radius:2px;letter-spacing:.14em;text-transform:uppercase;font-size:11px;box-shadow:none}
+.site-header .language-switcher select{text-transform:none;letter-spacing:.04em;font-size:12.5px}
+/* hero */
+@media(min-width:641px){
+ .welcome-hero{background-image:linear-gradient(180deg,rgba(6,24,32,.55) 0,transparent 180px),linear-gradient(90deg,transparent 30%,rgba(6,24,32,.45) 48%,rgba(6,24,32,.9) 100%),url('assets/welcome-hero.webp')}
+}
+.welcome-hero .hero-copy{position:relative}
+.welcome-hero .hero-copy::before{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-bottom:26px}
+.welcome-hero .eyebrow{color:var(--gold);letter-spacing:.34em}
+.welcome-hero h1{font-weight:300;line-height:1.04;letter-spacing:.005em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.welcome-hero h1 em{color:var(--gold);font-weight:300}
+.welcome-hero .hero-description{font-size:17px;line-height:1.75;color:#F3EBDA;max-width:400px}
+.welcome-hero .hero-footnote{letter-spacing:.14em;text-transform:uppercase;font-size:10px;line-height:1.9;color:#D8CDB4;max-width:340px;margin-top:26px}
+.hero-actions{margin-top:34px}
+/* separadores con ornamento */
+.section-heading::before,.how-section .wrap>.eyebrow::before,.faq h2::before{content:"";display:block;width:100px;height:12px;margin:0 auto 26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='12'%3E%3Cpath d='M0 6h38M62 6h38' stroke='%23B88A2E' stroke-width='1'/%3E%3Cpath d='M50 1l5 5-5 5-5-5z' fill='%23B88A2E'/%3E%3C/svg%3E") center/contain no-repeat}
+.faq h2{text-align:center}
+.faq h2::before{margin-bottom:22px}
+.how-section .wrap>.eyebrow{display:block;text-align:center}
+.how-section .wrap>.eyebrow::before{margin-bottom:22px}
+.how-section .wrap>h2{text-align:center}
+/* titulos de seccion centrados, estilo carta de restaurante */
+.catalogue{padding-top:84px}
+.section-heading{display:block;text-align:center;margin-bottom:34px}
+.section-heading h2{font-size:clamp(40px,5vw,64px);line-height:1.08}
+.section-heading>p{max-width:420px;margin:20px auto 0;color:#5a666b;font-size:15px;line-height:1.8}
+.launch-notice,.minimum-order-note{text-align:center;justify-content:center}
+.launch-notice{border:0;background:transparent;padding-block:8px}
+.minimum-order-note{letter-spacing:.04em}
+.menu-caption{justify-content:center;text-align:center;gap:10px 28px;flex-wrap:wrap;color:#6b7479}
+.menu-view-switch,.products-browser .product-navigation{justify-content:center}
+.food-grid{gap:34px}
+.heritage{padding-block:40px 110px}
+.heritage>img{box-shadow:0 24px 60px rgba(11,37,49,.18);border-radius:200px 200px 2px 2px}
+.heritage-note{color:#8a6a2a;letter-spacing:.2em}
+.how-section{padding-block:96px;border-block:1px solid var(--hair)}
+.steps{gap:80px}
+.steps h3{font-weight:500}
+.steps article{position:relative}
+.steps article+article::before{content:"";position:absolute;left:-40px;top:8px;bottom:8px;width:1px;background:var(--hair)}
+.steps article>span{font-size:30px}
+.offers-signup{background:var(--paper);border:1px solid var(--hair);border-radius:2px;box-shadow:none;margin-block:72px}
+.local-cuisine{padding-block:72px;max-width:860px}
+.local-cuisine h2{text-align:center}
+.local-contact{justify-content:flex-start}
+.locale-links a{letter-spacing:.08em}
+/* pie oscuro */
+footer.wrap{background:#060607;color:#D8CDB4;box-shadow:0 0 0 100vmax #060607;clip-path:inset(0 -100vmax);margin-top:40px;padding-top:56px}
+footer.wrap a,footer.wrap .text-button{color:#C9A25A}
+footer.wrap .wordmark span{color:#F1E8D4}
+footer.wrap .wordmark small{color:#9DB0B8;letter-spacing:.24em}
+footer.wrap .footer-main>p{color:#D8CDB4}
+footer.wrap .footer-fine,footer.wrap .footer-copyright{color:#9DB0B8;border-color:rgba(201,162,90,.25)}
+@media(max-width:900px){.steps article+article::before{display:none}.header-shell .site-header{width:calc(100% - 32px)}}
+@media(max-width:640px){
+ .section-heading h2{font-size:42px}
+ .catalogue{padding-top:56px}
+ .heritage{padding-block:10px 64px}
+ .how-section{padding-block:64px}
+ .welcome-hero .hero-copy::before{margin-bottom:18px}
+ .welcome-hero .hero-description{font-size:16px}
+}
+.header-shell .site-header,.header-shell .site-header::before{border-radius:0!important;background:transparent!important;box-shadow:none!important;border-inline:0;border-top:0}
+.section-heading>div{text-align:center}
+.offers-signup .primary,.offers-signup .secondary,.how-section .primary{background:var(--ink);border-color:var(--ink);color:var(--ivory)}
+.offers-signup .primary:hover{background:#24404d}
+/* cabecera: barra sólida y sobria (sticky en escritorio) */
+.header-shell{background:#060607}
+@media(min-width:901px){
+ .header-shell{position:sticky;inset:auto;top:0;width:100%;margin:0;border:0;border-bottom:1px solid rgba(201,162,90,.35);border-radius:0;background:rgba(7,26,35,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 26px rgba(0,0,0,.22)}
+ .header-shell .site-header{border-bottom:0;min-height:84px;padding-block:10px}
+ .welcome-hero .hero{padding-block:64px;min-height:calc(100svh - 130px)}
+}
+@media(max-width:900px){
+ .site-header nav{gap:16px;justify-content:center;flex-wrap:wrap}
+ .site-header nav a,.site-header nav a.how-link,.site-header nav a.offers-nav-link{font-size:10px;letter-spacing:.12em}
+}
+.section-heading .eyebrow{display:block;text-align:center}
+
+/* ===== Paleta bordeaux / negro suave / dorado ===== */
+:root{--navy:#060607;--ink:#1B1513;--blue:#5A1A28;--door-blue:#060607;--terracotta:#7A1F32;--bougainvillea:#7A1F32;--bordeaux:#5A1A28;--bordeaux-deep:#3F1019;--black-soft:#060607;--muted:#5B5250;--line:#DCCBA8}
+.announcement{background:var(--bordeaux);color:#E4C98C;border-bottom:1px solid rgba(201,162,90,.4)}
+.header-shell{background:#060607}
+@media(min-width:901px){.header-shell{background:rgba(6,6,7,.96)}}
+@media(min-width:641px){
+ .welcome-hero{background-image:linear-gradient(180deg,rgba(6,6,7,.5) 0,transparent 160px),linear-gradient(90deg,transparent 30%,rgba(6,6,7,.5) 48%,rgba(24,17,15,.92) 100%),url('assets/welcome-hero.webp')}
+}
+@media(max-width:640px){
+ .welcome-hero{background-color:#060607;background-image:linear-gradient(180deg,transparent 0,transparent 400px,#060607 550px),url('assets/welcome-hero.webp')}
+}
+.hero-footnote,.welcome-hero .hero-footnote{color:#D9CDB6}
+.welcome-hero h1 em{color:#D9B268}
+h1 em,h2 em,.section-heading em{color:var(--terracotta)}
+.welcome-hero h1 em{color:#D9B268}
+.hero .primary,.wa-cta,.card-content .add-button:hover{color:#060607}
+.card-content .add-button{color:var(--ink);border-color:var(--ink)}
+.card-content .add-button:hover{background:var(--bordeaux);border-color:var(--bordeaux);color:#F6EAD0}
+.categories .category[aria-pressed=true],.categories .category.active{background:var(--bordeaux);border-color:var(--bordeaux);color:#F6EAD0}
+.categories .category:hover{border-color:var(--bordeaux)}
+.wa-float{background:#060607;border-color:var(--gold)}
+.offers-signup .primary,.offers-signup .secondary{background:var(--bordeaux);border-color:var(--bordeaux);color:#F6EAD0}
+.offers-signup .primary:hover{background:var(--bordeaux-deep)}
+.menu-view-switch button[aria-pressed=true]{background:var(--bordeaux);color:#F6EAD0}
+/* "Cómo pedir" en bordeaux */
+.how-section{background:var(--bordeaux);color:#F1E6D0;border-block:1px solid rgba(201,162,90,.5)}
+.how-section h2,.how-section h3{color:#F6EAD0}
+.how-section h2 em{color:#D9B268}
+.how-section .eyebrow{color:#D9B268}
+.how-section .steps p{color:#E3D3B8}
+.how-section .steps article>span{color:#D9B268}
+.how-section .steps article+article::before{background:rgba(201,162,90,.45)}
+.how-section .wrap>.eyebrow::before{filter:brightness(1.25)}
+/* pie y cookies */
+footer.wrap{background:#050506;box-shadow:0 0 0 100vmax #050506}
+.analytics-consent{color:#060607}
+.analytics-consent-actions button{background:#060607;border-color:#060607}
+.analytics-consent-actions button:first-child{background:var(--bordeaux);border-color:var(--bordeaux)}
+.heritage-note,.card-category{color:#8A6A2A}
+::selection{background:var(--bordeaux);color:#F6EAD0}
+:focus-visible{outline-color:var(--gold)}
+
+/* ===== Fondo: blanco roto neutro (sustituye al marfil amarillento) ===== */
+:root{--cream:#F8F6F3;--ivory:#F8F6F3;--paper:#FFFFFF;--line:#E4DACA}
+body{background:#F8F6F3}
+.card-photo{background:#EFECE8}
+.food-card,.offers-signup{background:#FFFFFF}
+.card-content{background:#FFFFFF!important}
+.card-bottom{border-top-color:#EAE3D6}
+.faq details{border-color:rgba(184,138,46,.4)}
+.product-navigation button,.menu-view-switch,.menu-view-switch button,.cart-dialog .secondary,.product-dialog .secondary,.quantity button{background:#FFFFFF;border-color:#DDD2BE;box-shadow:none}
+.product-navigation button{border-radius:2px;text-transform:uppercase;letter-spacing:.14em;font-size:10.5px}
+.menu-view-switch button[aria-pressed=true]{background:var(--bordeaux)}
+.analytics-consent{background:#FFFFFF;border-color:rgba(184,138,46,.5)}
+
+/* ===== Tema negro suave + rouge bordeaux ===== */
+:root{--cream:#F8F6F3;--ivory:#F8F6F3;--paper:#101012;--line:#3A2D28;--muted:#B8ADA0;--ink:#EDE4D3;--bordeaux:#7A1B2E;--bordeaux-deep:#5A1220;--terracotta:#C2485E;--bougainvillea:#C2485E;--text:#EDE4D3;--hair:rgba(201,162,90,.38)}
+body{background:#08080A;color:#EDE4D3}
+dialog{--cream:#F8F6F3;--paper:#FFFFFF;--line:#E4DACA;--muted:#5B5250;--ink:#060607;--terracotta:#8F3A24;background:#FFFFFF;color:#060607}
+h1,h2,h3{color:#EDE4D3}
+dialog h1,dialog h2,dialog h3{color:#060607}
+.how-section h2,.how-section h3{color:#F6EAD0}
+h2 em,.section-heading em,h1 em{color:#C2485E}
+.welcome-hero h1 em,.how-section h2 em{color:#D9B268}
+.announcement{background:#7A1B2E}
+.order-facts{background:#7A1B2E;color:#F6EAD0;border-block:1px solid rgba(201,162,90,.5)}
+.flavour-strip{background:#08080A;color:#C9A25A}
+.catalogue{background:transparent}
+.section-heading>p,.launch-notice p,.menu-caption,.minimum-order-note{color:#B8ADA0}
+.minimum-order-note,.launch-notice strong{color:#EDE4D3}
+.section-heading::before{filter:none}
+.categories .category{background:transparent;border-color:rgba(201,162,90,.4);color:#EDE4D3}
+.categories .category[aria-pressed=true],.categories .category.active{background:#7A1B2E;border-color:#7A1B2E;color:#F6EAD0}
+.categories .category:hover{border-color:#C9A25A}
+.search,.search input{background:#101012;color:#EDE4D3;border-color:rgba(201,162,90,.35)}
+.search input::placeholder{color:#8F857A}
+.search svg{stroke:#C9A25A}
+.menu-view-switch,.menu-view-switch button,.product-navigation button{background:#101012;color:#EDE4D3;border-color:rgba(201,162,90,.35)}
+.menu-view-switch button[aria-pressed=true]{background:#7A1B2E;color:#F6EAD0}
+.menu-tools,.products-browser{border-color:rgba(201,162,90,.25)}
+.food-card{background:#101012;border-color:rgba(201,162,90,.4)}
+.food-card:hover{border-color:#C9A25A;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card-content{background:#101012!important;color:#EDE4D3!important;border-top:1px solid rgba(201,162,90,.4)!important}
+.card-content h3,.card-content .card-price{color:#F3EADA}
+.card-content>p:not(.card-category),.card-content .card-price.pending{color:#B8ADA0!important}
+.card-category{color:#C9A25A!important}
+.card-bottom{border-top-color:rgba(201,162,90,.22)}
+.card-content .add-button{background:transparent;color:#EDE4D3;border:1px solid #C9A25A}
+.card-content .add-button:hover{background:#7A1B2E;border-color:#7A1B2E;color:#F6EAD0}
+.card-photo{background:#17171A}
+.packshot{background:#fff}
+.heritage>div>p:not(.eyebrow){color:#B8ADA0}
+.heritage .eyebrow,.eyebrow{color:#C9A25A}
+.heritage-note{color:#C9A25A;border-top-color:rgba(201,162,90,.3)}
+.heritage>img{box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.how-section{background:#5E1626}
+.offers-signup{background:#101012;border-color:rgba(201,162,90,.4);color:#EDE4D3}
+.offers-signup p{color:#C9BEB0}
+.offers-signup .fine{color:#9A8F83}
+.offers-signup .primary,.offers-signup .secondary{background:#7A1B2E;border-color:#7A1B2E;color:#F6EAD0}
+.offers-signup .primary:hover{background:#962238}
+.faq summary,.faq details summary{color:#EDE4D3}
+.faq p{color:#B8ADA0}
+.faq details,.faq details:last-of-type{border-color:rgba(201,162,90,.35)}
+.local-cuisine h2{color:#EDE4D3}
+.local-cuisine p,.local-cuisine .fine{color:#B8ADA0}
+.local-contact a:not(.primary),.locale-links a{color:#C9A25A}
+.local-cuisine{border-top:1px solid rgba(201,162,90,.25)}
+footer.wrap{background:#050506;box-shadow:0 0 0 100vmax #050506}
+.analytics-consent{background:#101012;color:#EDE4D3;border-color:rgba(201,162,90,.5)}
+.analytics-consent h2{color:#F3EADA}
+.analytics-consent a{color:#C9A25A}
+.analytics-consent-actions button{background:transparent;border:1px solid #C9A25A;color:#EDE4D3}
+.analytics-consent-actions button:first-child{background:#7A1B2E;border-color:#7A1B2E;color:#F6EAD0}
+.mobile-bag.floating-cart{border-color:#C9A25A}
+.wa-float{background:#050506;border-color:#C9A25A}
+.site-header .language-switcher select option{background:#08080A;color:#EDE4D3}
+::selection{background:#7A1B2E;color:#F6EAD0}
+dialog,.product-dialog,.cart-dialog,.privacy-dialog,.offers-reminder,.order-card-dialog{background:#FFFFFF;border:1px solid rgba(184,138,46,.5);border-radius:4px;color:#060607}
+.cart-dialog{border-radius:0}
+dialog .primary,dialog .add-button{background:#7A1B2E;border-color:#7A1B2E;color:#F6EAD0}
+dialog .secondary,dialog .text-button{color:#060607}
+
+/* ===== Bordeaux profundo con efecto satén (sin rosa) ===== */
+:root{--bordeaux:#4A0E1B;--bordeaux-deep:#2E070E;--terracotta:#D9B268;--bougainvillea:#D9B268;
+ --satin:linear-gradient(112deg,#2B060D 0%,#470C19 20%,#661828 36%,#4B0F1D 50%,#2F0710 68%,#4A0E1B 84%,#2A060C 100%);
+ --satin-soft:linear-gradient(112deg,#35080F 0%,#521120 24%,#71202F 40%,#521120 56%,#35080F 100%)}
+.announcement{background:var(--satin);color:#E4C98C}
+.order-facts{background:var(--satin);color:#F3E6CA}
+.how-section{background:var(--satin);background-size:100% 100%}
+.how-section::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 90% at 70% 0%,rgba(255,255,255,.07),transparent 70%)}
+.how-section{position:relative;overflow:hidden}
+.how-section .wrap{position:relative;z-index:1}
+.categories .category[aria-pressed=true],.categories .category.active,
+.menu-view-switch button[aria-pressed=true],
+.offers-signup .primary,.offers-signup .secondary,
+.analytics-consent-actions button:first-child,
+dialog .primary,dialog .add-button{background:var(--satin);border-color:#6A1A2B;color:#F3E6CA;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.card-content .add-button:hover,.offers-signup .primary:hover,dialog .primary:hover{background:var(--satin-soft);border-color:#8A2A3B;color:#fff}
+.card-content .add-button:hover{border-color:#C9A25A}
+/* textos de acento: dorado, no rojo */
+h2 em,.section-heading em,.heritage h2 em{color:#D9B268}
+.section-heading .eyebrow,.eyebrow{color:#C9A25A}
+.launch-notice .status-dot,.launch-notice::before{background:#C9A25A}
+::selection{background:#4A0E1B;color:#F3E6CA}
+.menu-tools,.product-navigation{background:#08080A}
+.menu-tools{border-bottom-color:rgba(201,162,90,.25)}
+.card-badge{background:#08080A;color:#EDE4D3}
+
+/* ===== Terciopelo bordeaux (referencia del cliente): sombras casi negras, pliegues vino ===== */
+:root{--bordeaux:#3E0A18;--bordeaux-deep:#1E0409;
+ --satin:linear-gradient(112deg,#1C0409 0%,#3C0A18 16%,#781232 31%,#4A0B1D 45%,#200509 63%,#430A1A 82%,#1A0408 100%);
+ --satin-soft:linear-gradient(112deg,#2A0711 0%,#4E0D20 18%,#8C1738 34%,#590F25 50%,#2A0711 70%,#4A0C1D 100%);
+ --velvet:radial-gradient(ellipse 38% 55% at 62% 55%,rgba(150,22,58,.45),transparent 70%),conic-gradient(from 205deg at 62% 56%,#1A0408 0deg,#4C0C20 28deg,#1A0408 52deg,#781232 84deg,#240609 122deg,#430A1B 168deg,#150306 210deg,#5E0F27 258deg,#1E0409 300deg,#4C0C20 336deg,#1A0408 360deg)}
+.announcement,.order-facts{background:var(--satin)}
+.how-section{background:var(--velvet);background-color:#1A0408}
+.how-section::after{background:radial-gradient(55% 80% at 15% 0%,rgba(255,255,255,.05),transparent 70%)}
+.categories .category[aria-pressed=true],.categories .category.active,
+.menu-view-switch button[aria-pressed=true],
+.offers-signup .primary,.offers-signup .secondary,
+.analytics-consent-actions button:first-child,
+dialog .primary,dialog .add-button{border-color:#7A1232}
+
+/* ===== Negro satén (negro con tinte vino) + pliegues suaves ===== */
+:root{--blk:#060607;
+ --blk-satin:linear-gradient(115deg,#0B0305 0%,#1B090D 26%,#2A1116 42%,#170709 58%,#0A0304 78%,#190A0D 100%);
+ --panel-satin:linear-gradient(118deg,#150709 0%,#17171A 30%,#321A1F 46%,#1E0C10 62%,#130608 100%);
+ --velvet:radial-gradient(ellipse 46% 80% at 72% 55%,rgba(150,24,60,.42),transparent 72%),radial-gradient(ellipse 36% 95% at 10% 25%,rgba(125,20,52,.34),transparent 74%),repeating-linear-gradient(102deg,rgba(255,255,255,.022) 0 2px,transparent 2px 46px),linear-gradient(100deg,#190307 0%,#3A0A18 22%,#5E0F28 38%,#280610 55%,#4A0C1F 74%,#190307 100%)}
+body{background:radial-gradient(ellipse 70% 40% at 12% 0%,rgba(90,14,34,.20),transparent 70%),radial-gradient(ellipse 60% 45% at 92% 55%,rgba(70,10,28,.22),transparent 70%),#060607;background-attachment:fixed}
+.how-section{background:var(--velvet);background-color:#190307}
+.header-shell{background:var(--blk-satin)}
+@media(min-width:901px){.header-shell{background:linear-gradient(115deg,rgba(3,3,4,.97),rgba(14,14,16,.97) 38%,rgba(4,4,5,.97) 70%,rgba(12,12,14,.97))}}
+footer.wrap{background:var(--blk-satin);box-shadow:0 0 0 100vmax #0B0305}
+.food-card,.card-content{background:var(--panel-satin)!important}
+.offers-signup,.analytics-consent,.search,.menu-view-switch,.menu-view-switch button,.product-navigation button{background:var(--panel-satin)}
+.menu-view-switch button[aria-pressed=true]{background:var(--satin)}
+.menu-tools,.product-navigation{background:rgba(6,6,7,.96);backdrop-filter:blur(8px)}
+.wa-float{background:var(--blk-satin)}
+.card-photo{background:#17171A}
+.announcement,.order-facts{background:var(--satin)}
+.flavour-strip{background:transparent}
+.site-header .language-switcher select option{background:#060607}
+.card-badge{background:#060607}
+
+/* ===== Negro puro satinado (neutro, sin marrón) ===== */
+:root{--blk:#060607;
+ --blk-satin:linear-gradient(115deg,#020203 0%,#0D0D0F 26%,#19191C 42%,#0B0B0D 58%,#030304 78%,#0E0E10 100%);
+ --panel-satin:linear-gradient(118deg,#08080A 0%,#121214 30%,#1E1E22 46%,#0E0E10 62%,#08080A 100%)}
+body{background:radial-gradient(ellipse 70% 40% at 12% 0%,rgba(255,255,255,.035),transparent 70%),radial-gradient(ellipse 60% 45% at 92% 55%,rgba(255,255,255,.025),transparent 70%),#060607;background-attachment:fixed}
+.header-shell{background:var(--blk-satin)}
+@media(min-width:901px){.header-shell{background:linear-gradient(115deg,rgba(3,3,4,.97),rgba(18,18,21,.97) 38%,rgba(5,5,6,.97) 70%,rgba(14,14,16,.97))}}
+footer.wrap{background:var(--blk-satin);box-shadow:0 0 0 100vmax #030304}
+.card-photo{background:#17171A}
+.card-content,.food-card{border-color:rgba(201,162,90,.4)}
+.menu-tools,.product-navigation{background:rgba(6,6,7,.96)}
+@media(max-width:640px){.welcome-hero{background-color:#060607;background-image:linear-gradient(180deg,transparent 0,transparent 400px,#060607 550px),url('assets/welcome-hero.webp')}}
+@media(min-width:641px){.welcome-hero{background-image:linear-gradient(180deg,rgba(6,6,7,.55) 0,transparent 160px),linear-gradient(90deg,transparent 30%,rgba(6,6,7,.5) 48%,rgba(6,6,7,.93) 100%),url('assets/welcome-hero.webp')}}
+
+/* ===== Todo en rouge bordeaux satén (sin negro) ===== */
+:root{--wine:#22040D;--blk:#22040D;
+ --blk-satin:linear-gradient(115deg,#160208 0%,#380917 28%,#5A1225 42%,#310814 58%,#160208 78%,#380917 100%);
+ --panel-satin:linear-gradient(118deg,#380917 0%,#4F0F1F 30%,#6A1A2F 46%,#450D1B 62%,#380917 100%);
+ --gold-satin:linear-gradient(112deg,#9C7420 0%,#D9B268 30%,#B88A2E 52%,#E6C77E 74%,#A27A24 100%)}
+body{background:radial-gradient(ellipse 70% 40% at 12% 0%,rgba(150,24,60,.22),transparent 70%),radial-gradient(ellipse 60% 45% at 92% 55%,rgba(120,18,50,.2),transparent 70%),#22040D;background-attachment:fixed}
+.header-shell{background:var(--blk-satin)}
+@media(min-width:901px){.header-shell{background:linear-gradient(115deg,rgba(22,2,8,.97),rgba(58,10,24,.97) 38%,rgba(26,3,10,.97) 70%,rgba(52,9,22,.97))}}
+footer.wrap{background:var(--blk-satin);box-shadow:0 0 0 100vmax #160208}
+.food-card,.card-content{background:var(--panel-satin)!important}
+.offers-signup,.analytics-consent,.search,.menu-view-switch,.menu-view-switch button,.product-navigation button{background:var(--panel-satin)}
+.menu-tools,.product-navigation{background:rgba(34,4,13,.96)}
+.card-photo{background:#4A0E1D}
+.card-badge{background:#22040D}
+.site-header .language-switcher select option{background:#22040D}
+.wa-float{background:var(--blk-satin)}
+.how-section{background:var(--velvet);background-color:#14030A}
+.flavour-strip{background:transparent}
+.food-card,.card-content{border-color:rgba(217,178,104,.5)}
+.card-bottom{border-top-color:rgba(217,178,104,.28)}
+.card-content>p:not(.card-category),.card-content .card-price.pending,.section-heading>p,.launch-notice p,.menu-caption,.heritage>div>p:not(.eyebrow),.faq p,.local-cuisine p,.local-cuisine .fine,.offers-signup p{color:#D6C4B4!important}
+.offers-signup .fine{color:#B9A596!important}
+/* estados activos en dorado satén (visibles sobre el bordeaux) */
+.categories .category[aria-pressed=true],.categories .category.active,.menu-view-switch button[aria-pressed=true],.offers-signup .primary,.offers-signup .secondary,.analytics-consent-actions button:first-child{background:var(--gold-satin);border-color:#D9B268;color:#22040D;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.offers-signup .primary:hover{background:linear-gradient(112deg,#B88A2E,#EBD08A 50%,#B88A2E);color:#22040D}
+.card-content .add-button:hover{background:var(--gold-satin);border-color:#D9B268;color:#22040D}
+@media(max-width:640px){.welcome-hero{background-color:#22040D;background-image:linear-gradient(180deg,transparent 0,transparent 400px,#22040D 550px),url('assets/welcome-hero.webp')}}
+@media(min-width:641px){.welcome-hero{background-image:linear-gradient(180deg,rgba(26,3,10,.55) 0,transparent 160px),linear-gradient(90deg,transparent 30%,rgba(34,4,13,.5) 48%,rgba(30,3,11,.93) 100%),url('assets/welcome-hero.webp')}}
+.announcement,.order-facts{background:var(--satin)}
+.search input{background:transparent!important}
+.menu-tools,.product-navigation{background:rgba(34,4,13,.82);backdrop-filter:blur(10px)}
+
+/* ===== Flechas de inicio/final y botón de WhatsApp junto al carrito ===== */
+.product-navigation{justify-content:center;gap:14px}
+.product-navigation button{position:relative;font-size:0;width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;border:1px solid rgba(217,178,104,.7);background:var(--panel-satin);color:#E8CC8A;display:grid;place-items:center;box-shadow:none}
+.product-navigation button::before{content:"";width:18px;height:18px;background:currentColor;-webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat}
+.product-navigation button[data-products-jump=start]{--arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4l-8 9h5v7h6v-7h5z'/%3E%3C/svg%3E")}
+.product-navigation button[data-products-jump=end]{--arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 20l8-9h-5V4H9v7H4z'/%3E%3C/svg%3E")}
+.product-navigation button:hover{background:var(--gold-satin);color:#22040D;border-color:#D9B268}
+.product-navigation button:focus-visible{outline:2px solid #E8CC8A;outline-offset:3px}
+/* WhatsApp flotante: junto al carrito, verde satén con filete dorado */
+.wa-float{left:auto;right:calc(max(18px,env(safe-area-inset-right)) + 76px);bottom:max(18px,env(safe-area-inset-bottom));height:64px;min-height:64px;padding:0 24px 0 20px;border-radius:999px;background:linear-gradient(112deg,#0B5F2F 0%,#16894A 38%,#0E6B35 62%,#0A5428 100%);border:1px solid rgba(232,204,138,.8);color:#fff;gap:10px;font-size:12px;letter-spacing:.14em;box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 28px rgba(0,0,0,.45)}
+.wa-float svg{color:#fff;width:24px;height:24px}
+.wa-float:hover{background:linear-gradient(112deg,#0E7239,#1C9C55 40%,#12803F 64%,#0C6230);border-color:#F1D898;color:#fff}
+@media(max-width:640px){.wa-float{left:16px;right:92px;justify-content:center;padding:0 14px;font-size:11.5px}}
+footer.wrap p,footer.wrap .footer-fine,footer.wrap .footer-copyright,footer.wrap .footer-copyright p,footer.wrap .wordmark small{color:#D2C4B0}
+.wa-float{background:linear-gradient(112deg,#0A5A2C 0%,#127A40 38%,#0E6B35 62%,#0A5428 100%)}
+.wa-float:hover{background:linear-gradient(112deg,#0D6B35,#16894A 40%,#10773B 64%,#0B5C2C)}
+.welcome-hero .hero-description,.welcome-hero .hero-footnote,.welcome-hero .eyebrow{text-shadow:0 1px 14px rgba(0,0,0,.65)}
+.wa-float{transition:opacity .25s ease,transform .25s ease,background .2s}
+.wa-float.is-hidden{opacity:0;transform:translateY(14px);pointer-events:none}
+@media(max-width:640px){.wa-float{white-space:nowrap;font-size:11px;letter-spacing:.08em;height:56px;min-height:56px;bottom:max(22px,env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){.wa-float{transition:none}}
+.floating-cart{transition:opacity .25s ease,transform .25s ease}
+.floating-cart.is-hidden{opacity:0;transform:translateY(14px);pointer-events:none}
+
+/* flechas sueltas, sin barra: flotan en el margen derecho de la carta */
+.product-navigation{position:sticky;top:46vh;height:0;padding:0;margin:0;background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:10px;pointer-events:none;z-index:5;overflow:visible}
+.product-navigation button{pointer-events:auto;margin-right:-58px;background:linear-gradient(135deg,#3A0A18,#5C1226);box-shadow:0 6px 18px rgba(0,0,0,.45)}
+@media(max-width:1400px){.product-navigation button{margin-right:-6px;width:42px;height:42px;min-height:42px;opacity:.94}}
+@media(max-width:640px){.product-navigation{top:55vh}.product-navigation button{margin-right:-4px;width:40px;height:40px;min-height:40px}}
+.menu-tools{background:rgba(34,4,13,.97)!important;backdrop-filter:none}
+/* flechas fijas en el borde derecho, solo visibles sobre la carta */
+.product-navigation{position:fixed;top:50%;right:max(10px,env(safe-area-inset-right));left:auto;transform:translateY(-50%);width:auto;height:auto;transition:opacity .25s ease}
+.product-navigation button{margin-right:0!important;width:46px;height:46px;min-height:46px}
+.product-navigation.is-hidden{opacity:0;visibility:hidden}
+.product-navigation.is-hidden button{pointer-events:none}
+@media(max-width:640px){.product-navigation{top:auto;bottom:max(100px,calc(env(safe-area-inset-bottom) + 88px));transform:none;right:16px}.product-navigation button{width:40px;height:40px;min-height:40px}}
+
+/* WhatsApp flotante: compacto, solo icono, encima del carrito; se expande al pasar el ratón */
+.wa-float{left:auto!important;right:max(18px,env(safe-area-inset-right))!important;bottom:calc(max(18px,env(safe-area-inset-bottom)) + 78px)!important;width:52px;height:52px;min-height:52px;padding:0!important;gap:0!important;justify-content:center;overflow:hidden;border-radius:999px;font-size:11.5px;letter-spacing:.12em}
+.wa-float svg{width:26px;height:26px}
+.wa-float span{max-width:0;opacity:0;white-space:nowrap;overflow:hidden;transition:max-width .28s ease,opacity .2s ease}
+.wa-float:hover,.wa-float:focus-visible{width:auto;padding:0 20px 0 15px!important;gap:10px!important}
+.wa-float:hover span,.wa-float:focus-visible span{max-width:230px;opacity:1}
+@media(max-width:640px){
+ .wa-float{right:max(18px,env(safe-area-inset-right))!important;left:auto!important;width:52px;height:52px;min-height:52px;padding:0!important;font-size:11.5px}
+ .product-navigation{right:auto;left:16px;bottom:max(24px,calc(env(safe-area-inset-bottom) + 24px))}
+}
+
+/* fondo de la carta: negro satén profundo */
+.catalogue{background:linear-gradient(115deg,#080406 0%,#120A0D 30%,#1B1014 46%,#0E070A 62%,#070305 100%);box-shadow:0 0 0 100vmax #0B0608;clip-path:inset(0 -100vmax);position:relative}
+.menu-tools{background:rgba(9,5,7,.97)!important}
+.catalogue{background:#0B0608;box-shadow:0 0 0 100vmax #0B0608}
+.menu-tools{background:rgba(11,6,8,.97)!important}
+/* fondo de la carta: carbón vino, más claro */
+.catalogue{background:#2A1A20;box-shadow:0 0 0 100vmax #2A1A20}
+.menu-tools{background:rgba(42,26,32,.97)!important}
+.category,.search,.categories .category{border-color:rgba(217,178,104,.55)}
+
+/* ===== Fondo de la carta: satén champán (oro claro) ===== */
+.catalogue{background:linear-gradient(115deg,#E9D9B4 0%,#F4E8CB 22%,#FBF3DE 38%,#EBDBB6 55%,#F6EBD0 74%,#E4D2A8 100%);box-shadow:0 0 0 100vmax #EFE2C3;clip-path:inset(0 -100vmax)}
+.catalogue .section-heading h2,.catalogue h2{color:#2A0A12}
+.catalogue .section-heading h2 em,.catalogue h2 em{color:#6B1427}
+.catalogue .section-heading>p,.catalogue .launch-notice p,.catalogue .menu-caption,.catalogue .menu-caption span{color:#4A3A34!important}
+.catalogue .launch-notice strong,.catalogue .minimum-order-note{color:#2A0A12}
+.catalogue .launch-notice .status-dot{background:#6B1427}
+.catalogue .eyebrow{color:#6B4A0C}
+.catalogue .section-heading::before{filter:brightness(.75)}
+.menu-tools{background:rgba(238,224,190,.97)!important;border-bottom-color:rgba(107,20,39,.25)}
+.catalogue .categories .category{background:transparent;color:#2A0A12;border-color:rgba(107,20,39,.45)}
+.catalogue .categories .category[aria-pressed=true],.catalogue .categories .category.active{background:linear-gradient(112deg,#2B060D,#5A0F24 40%,#3A0A18);border-color:#5A0F24;color:#F6E7C4}
+.catalogue .search,.catalogue .search input{background:#FBF5E6;color:#2A0A12;border-color:rgba(107,20,39,.4)}
+.catalogue .search input::placeholder{color:#6A5A52}
+.catalogue .search svg{stroke:#6B1427}
+.catalogue .menu-view-switch,.catalogue .menu-view-switch button{background:#FBF5E6;color:#2A0A12;border-color:rgba(107,20,39,.4)}
+.catalogue .menu-view-switch button[aria-pressed=true]{background:linear-gradient(112deg,#2B060D,#5A0F24 40%,#3A0A18);color:#F6E7C4}
+.catalogue .food-card{box-shadow:0 10px 26px rgba(60,20,10,.22)}
+.product-navigation button{box-shadow:0 6px 18px rgba(60,20,10,.35)}
+.catalogue{background:none!important;box-shadow:none!important;clip-path:none!important;isolation:isolate}
+.catalogue::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:linear-gradient(115deg,#E6D4AA 0%,#F4E8CB 18%,#FBF3DE 32%,#EBDBB6 48%,#F6EBD0 64%,#FBF3DE 78%,#E4D2A8 100%)}
+.menu-tools{background:rgba(240,228,196,.98)!important}
+html,body{overflow-x:clip}
+.menu-tools{background:rgba(246,236,210,.82)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
+/* champán: beige dorado rosado, menos amarillo */
+.catalogue::before{background:linear-gradient(115deg,#E3CDB0 0%,#F1E1CB 18%,#F9EEDC 32%,#E9D5BA 48%,#F4E5D0 64%,#FAF0E0 78%,#E0CAAD 100%)}
+.menu-tools{background:rgba(244,232,214,.84)!important}
+/* satén champán con pliegues y brillos marcados */
+.catalogue::before{background:
+ radial-gradient(ellipse 28% 60% at 82% 18%,rgba(255,255,255,.75),transparent 70%),
+ radial-gradient(ellipse 24% 50% at 14% 62%,rgba(255,252,243,.65),transparent 72%),
+ radial-gradient(ellipse 30% 45% at 58% 88%,rgba(255,255,255,.5),transparent 72%),
+ linear-gradient(104deg,#D2B691 0%,#E9D3B2 9%,#FBF1DF 17%,#E4CBA6 26%,#C9AA82 34%,#E8D2AE 43%,#FFF7E8 52%,#EBD6B5 61%,#CDAF88 70%,#E9D4B3 79%,#FBF0DC 88%,#D6BB96 100%)}
+.catalogue::after{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:repeating-linear-gradient(104deg,rgba(255,255,255,.07) 0 1px,transparent 1px 7px);mix-blend-mode:soft-light}
+.menu-tools{background:rgba(240,226,203,.86)!important}
+dialog .eyebrow,dialog .card-category{color:#6B4A0C!important}
+
+/* bebidas: la foto llena el cuadro */
+.food-card .card-photo.packshot{background:#fff!important;overflow:hidden}
+.food-card .card-photo.packshot img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:50% 56%!important;padding:0!important;transform:scale(.9);transform-origin:50% 56%}
+.food-card:hover .card-photo.packshot img{transform:scale(.94)}
+
+/* ===== Footer ===== */
+footer.site-footer{padding-top:64px;padding-bottom:36px;border-top:1px solid rgba(217,178,104,.55)}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:44px 48px;align-items:start;padding-bottom:44px;border-bottom:1px solid rgba(217,178,104,.25)}
+.ft-brand .wordmark{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.ft-tag{font-family:var(--serif,serif);font-style:italic;font-size:24px;line-height:1.25;margin:0 0 22px;max-width:320px;color:#EBD7A4!important}
+.ft-cta{min-height:48px;padding:12px 22px}
+.ft-col h3{font:600 11px/1 var(--sans,sans-serif);letter-spacing:.28em;text-transform:uppercase;color:#D9B268;margin:0 0 20px}
+.ft-col h3.ft-sub{margin-top:30px}
+.ft-col ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:14px;line-height:1.5}
+.ft-col a,.ft-langs a{text-decoration:none;color:#E8DCC4}
+.ft-col a:hover,.ft-langs a:hover{color:#D9B268;text-decoration:underline;text-underline-offset:4px}
+.ft-langs{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px}
+.ft-legal{border:0;padding-top:26px;margin-top:0;display:flex;justify-content:flex-start}
+.ft-legal>div{display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;font-size:12px;letter-spacing:.06em}
+footer.site-footer .footer-fine{text-align:start;border:0;padding-top:12px;margin-top:0;max-width:760px}
+footer.site-footer .footer-copyright{display:flex;flex-wrap:wrap;gap:6px 28px;margin-top:10px;font-size:12px}
+footer.site-footer .footer-copyright p{margin:0}
+footer.site-footer .analytics-settings{display:inline-block;margin:14px 0 0;font-size:12px;letter-spacing:.06em}
+@media(max-width:960px){.ft-grid{grid-template-columns:1fr 1fr;gap:38px 28px}.ft-brand{grid-column:1/-1}}
+@media(max-width:560px){.ft-grid{grid-template-columns:1fr}.ft-tag{font-size:22px}footer.site-footer{padding-bottom:110px}}
+footer.site-footer .ft-cta,footer.site-footer .ft-cta span{color:#14090B!important}
+footer.site-footer .ft-cta svg{color:#14090B}
+.ft-legal>div>a[href^="https://wa.me"]{display:none}
+.ft-brand .wordmark{align-items:flex-start}
+
+/* footer a todo el ancho de la pagina (banner completo) */
+footer.site-footer{width:100%!important;max-width:none!important;margin:48px 0 0!important;box-shadow:none!important;clip-path:none!important;border-radius:0;
+  padding-inline:max(24px,calc((100% - 1240px) / 2))!important;
+  background:radial-gradient(ellipse 50% 90% at 85% 0%,rgba(150,24,60,.28),transparent 70%),linear-gradient(115deg,#160208 0%,#380917 26%,#5A1225 42%,#310814 60%,#160208 80%,#380917 100%)!important;
+  border-top:1px solid rgba(217,178,104,.6)}
+@media(max-width:560px){footer.site-footer{padding-inline:20px!important}}
+
+/* ===== Dulces tunecinos por reserva ===== */
+.sweets{position:relative;padding:96px 0 84px;background:linear-gradient(180deg,#1A0409 0%,#2A0712 18%,#22040D 100%);border-top:1px solid rgba(217,178,104,.5);color:#F1E6D0}
+.sw-head{text-align:center;max-width:720px;margin:0 auto 52px}
+.sw-head .eyebrow{color:#D9B268}
+.sw-head h2{font-family:var(--serif,serif);font-weight:400;font-size:clamp(38px,5vw,64px);line-height:1.06;color:#F6EAD0;margin:12px 0 18px}
+.sw-head h2 em{color:#D9B268;font-style:italic}
+.sw-head::before{content:"";display:block;width:100px;height:12px;margin:0 auto 24px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='12'%3E%3Cpath d='M0 6h38M62 6h38' stroke='%23D9B268' stroke-width='1'/%3E%3Cpath d='M50 1l5 5-5 5-5-5z' fill='%23D9B268'/%3E%3C/svg%3E") center/contain no-repeat}
+.sw-intro{font-size:15.5px;line-height:1.75;color:#D9CBB4;margin:0}
+.sw-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+.sw-card{display:flex;flex-direction:column;background:linear-gradient(112deg,#2B060D,#4A0B1D 40%,#2B060D);border:1px solid rgba(217,178,104,.5);border-radius:6px;overflow:hidden;transition:border-color .2s,transform .3s ease}
+.sw-card:hover{border-color:#D9B268;transform:translateY(-3px)}
+.sw-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1A0409}
+.sw-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.sw-body{display:flex;flex-direction:column;gap:6px;padding:18px 18px 20px;flex:1}
+.sw-kind{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#D9B268;margin:0}
+.sw-body h3{font-family:var(--serif,serif);font-weight:500;font-size:24px;line-height:1.12;color:#F6EAD0;margin:0}
+.sw-price{font-size:13px;line-height:1.5;color:#D9CBB4;margin:2px 0 14px}
+.sw-btn{margin-top:auto;display:inline-flex;justify-content:center;align-items:center;text-decoration:none;text-align:center;min-height:46px;padding:10px 14px;background:transparent;color:#F6EAD0;border:1px solid #D9B268}
+.sw-btn:hover{background:linear-gradient(112deg,#9C7420,#D9B268 50%,#B88A2E);color:#22040D;border-color:#D9B268}
+.sw-note{text-align:center;font-size:12px;letter-spacing:.06em;color:#BFAF96;margin:34px 0 0}
+@media(max-width:1100px){.sw-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.sweets{padding:64px 0 60px}.sw-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sw-body{padding:14px 12px 16px}.sw-body h3{font-size:20px}.sw-btn{font-size:10.5px;letter-spacing:.08em;padding:8px}}
+.sw-head .eyebrow{display:block;text-align:center}
+.sw-price{display:flex;flex-direction:column;gap:2px}.sw-price strong{font-family:var(--serif,serif);font-weight:500;font-size:26px;color:#E8CC8A;letter-spacing:.01em}.sw-price span{font-size:12.5px;color:#D9CBB4}
+.sw-card.sold-out .sw-photo img{filter:grayscale(.55) brightness(.8)}
+.sw-card.sold-out .sw-photo::after{content:attr(data-sold);position:absolute;left:12px;top:12px;padding:6px 12px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;background:rgba(26,4,9,.88);color:#E8CC8A;border:1px solid #D9B268}
+.sw-card.sold-out .sw-price span{color:#E8CC8A}
