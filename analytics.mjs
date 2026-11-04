@@ -5,7 +5,9 @@ import './stats.mjs';
 const id='G-DWWVDJSC6E';
 const key='spice-souk-analytics-consent-v1';
 const lifetime=180*24*60*60*1000;
-const text=ANALYTICS_TEXT[language];
+// En la versión tunecina el aviso de privacidad se muestra en francés.
+const textLang=language==='tn'?'fr':language;
+const text=ANALYTICS_TEXT[textLang];
 let loaded=false;
 window[`ga-disable-${id}`]=true;
 window.dataLayer=window.dataLayer||[];
@@ -32,7 +34,7 @@ function removeAnalyticsCookies(){
     for(const domain of ['',`; domain=${location.hostname}`,`; domain=.${location.hostname}`])document.cookie=`${name}=; Max-Age=0; path=/${domain}; SameSite=Lax; Secure`;
   }
 }
-const banner=document.createElement('section');banner.className='analytics-consent';banner.hidden=true;banner.setAttribute('aria-labelledby','analytics-consent-title');
+const banner=document.createElement('section');banner.className='analytics-consent';banner.hidden=true;banner.lang=textLang;banner.dir='ltr';banner.setAttribute('aria-labelledby','analytics-consent-title');
 const title=document.createElement('h2');title.id='analytics-consent-title';title.textContent=text.title;title.tabIndex=-1;
 const body=document.createElement('p');body.textContent=text.body;
 const policy=document.createElement('a');policy.href='https://policies.google.com/privacy';policy.target='_blank';policy.rel='noopener noreferrer';policy.textContent=text.policy;
@@ -40,7 +42,7 @@ const buttons=document.createElement('div');buttons.className='analytics-consent
 const accept=document.createElement('button');accept.type='button';accept.textContent=text.accept;
 const reject=document.createElement('button');reject.type='button';reject.textContent=text.reject;
 buttons.append(accept,reject);banner.append(title,body,policy,buttons);document.body.append(banner);
-const settings=document.createElement('button');settings.type='button';settings.className='text-button analytics-settings';settings.textContent=text.settings;
+const settings=document.createElement('button');settings.type='button';settings.className='text-button analytics-settings';settings.lang=textLang;settings.textContent=text.settings;
 let footer=document.querySelector('footer');if(!footer){footer=document.createElement('footer');footer.className='wrap';document.body.append(footer);}footer.append(settings);
 settings.addEventListener('click',()=>{banner.hidden=false;title.focus();});
 function choose(choice){
@@ -53,5 +55,5 @@ function choose(choice){
   if(loaded)location.reload();
 }
 accept.addEventListener('click',()=>choose('granted'));reject.addEventListener('click',()=>choose('denied'));
-const notice=document.querySelector('[data-analytics-notice]');if(notice)notice.textContent=text.notice;
+const notice=document.querySelector('[data-analytics-notice]');if(notice){notice.textContent=text.notice;notice.lang=textLang;notice.dir='ltr';}
 const choice=savedChoice();if(choice==='granted')enableAnalytics();else{removeAnalyticsCookies();banner.hidden=choice==='denied';}
