@@ -1,5 +1,6 @@
 import { language } from './locale.mjs';
 import { ANALYTICS_TEXT } from './analytics-i18n.mjs';
+import './stats.mjs';
 
 const id='G-DWWVDJSC6E';
 const key='spice-souk-analytics-consent-v1';
