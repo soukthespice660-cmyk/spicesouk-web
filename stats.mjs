@@ -13,7 +13,6 @@ function eventFor(link){
   const href=link.getAttribute('href')||'';
   if(href.includes('instagram.com'))return 'instagram';
   if(href.includes('facebook.com'))return 'facebook';
-  if(/#menu$/.test(href))return 'ver_carta';
   if(!href.includes('wa.me'))return null;
   const ref=decodeURIComponent(href).match(/Ref\.\s*(\d+)/);
   if(link.classList.contains('sw-btn')&&ref)return `dulce_ref_${ref[1]}`;
