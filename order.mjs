@@ -48,7 +48,7 @@ export function subtotal(cart, menu) {
 }
 const clean = text => String(text || '').replace(/[\r\n]+/g, ' ').trim();
 export function validNumber(number) { return /^[1-9]\d{6,14}$/.test(number); }
-export const MINIMUM_NOTICE_HOURS = 24;
+export const MINIMUM_NOTICE_HOURS = 0;
 const madridFormatter = new Intl.DateTimeFormat('sv-SE', {timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
 export function madridDateTime(timestamp) {
   const parts=Object.fromEntries(madridFormatter.formatToParts(new Date(timestamp)).map(part=>[part.type,part.value]));
@@ -83,7 +83,7 @@ export function validateOrder(cart, menu, customer, number, now=Date.now(),minim
   if (customer.fulfilment === 'delivery' && customer.addressConfirmed !== 'on') errors.push('Confirm that your delivery address is correct.');
   const requested=madridTimestamp(customer.time);
   if (!Number.isFinite(requested)) errors.push('Choose a valid, unambiguous date and time in Madrid.');
-  else if(requested < Number(now)+MINIMUM_NOTICE_HOURS*3600000) errors.push('Please order at least 24 hours in advance (Madrid time).');
+  else if(requested < Number(now)+MINIMUM_NOTICE_HOURS*3600000) errors.push('Choose a time later than now (Madrid time).');
   if (!/^[+\d\s().-]+$/.test(clean(customer.phone)) || !/^\d{7,15}$/.test(clean(customer.phone).replace(/\D/g,''))) errors.push('Enter a valid contact phone number.');
   try {
     tipAmount(customer.tipCents);

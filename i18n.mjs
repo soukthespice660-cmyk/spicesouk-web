@@ -394,10 +394,10 @@ export const STRINGS = {
     "es": "Ir a la carta",
     "tn": "امشي للقائمة"
   },
-  "Tunisian roots. Madrid soul. · Order at least 24 hours ahead": {
-    "fr": "Des racines tunisiennes. Une âme madrilène. · Commandez au moins 24 h à l’avance",
-    "es": "Raíces tunecinas. Alma madrileña. · Pide con al menos 24 horas de antelación",
-    "tn": "أصول تونسية وروح مدريد · اطلب قبل بـ24 ساعة على الأقل"
+  "Tunisian roots. Madrid soul. · Same-day orders, 8 hours ahead": {
+    "fr": "Des racines tunisiennes. Une âme madrilène. · Commandes le jour même, 8 h à l’avance",
+    "es": "Raíces tunecinas. Alma madrileña. · Pide para hoy con 8 horas de antelación",
+    "tn": "أصول تونسية وروح مدريد · اطلب لنفس النهار قبل بـ8 سوايع"
   },
   "TUNISIAN FOOD · MADRID": {
     "fr": "CUISINE TUNISIENNE · MADRID",
@@ -444,10 +444,10 @@ export const STRINGS = {
     "es": "Del cuscús al brik dorado, descubre los platos que llevan Túnez a tu mesa.",
     "tn": "من الكسكسي للبريك، اكتشف الماكلة اللي تجيب بنة تونس لطاولتك."
   },
-  "Prepared for your table. Order at least 24 hours ahead.": {
-    "fr": "Préparé pour votre table. Commandez au moins 24 h à l’avance.",
-    "es": "Preparado para tu mesa. Pide con al menos 24 horas de antelación.",
-    "tn": "نحضروه لطاولتك. اطلب قبل بـ24 ساعة على الأقل."
+  "Prepared for your table. Order today, at least 8 hours ahead.": {
+    "fr": "Préparé pour votre table. Commandez pour aujourd’hui, au moins 8 h à l’avance.",
+    "es": "Preparado para tu mesa. Pide para hoy con al menos 8 horas de antelación.",
+    "tn": "نحضروه لطاولتك. اطلب لنفس النهار قبل بـ8 سوايع على الأقل."
   },
   "COUSCOUS": {
     "fr": "COUSCOUS",
@@ -544,10 +544,10 @@ export const STRINGS = {
     "es": "La calidez de compartir mesa y el carácter de la cocina tunecina. Descubre cuscús, brik y tus platos favoritos.",
     "tn": "لمة الطاولة وبنة الماكلة التونسية. اكتشف الكسكسي والبريك والأطباق اللي تعرفهم وتحبهم."
   },
-  "YOUR TABLE, PLANNED WITH CARE · 24 HOURS AHEAD": {
-    "fr": "VOTRE TABLE, PRÉPARÉE AVEC SOIN · 24 H À L’AVANCE",
-    "es": "TU MESA, PREPARADA CON CUIDADO · 24 HORAS ANTES",
-    "tn": "لطاولتك بكل عناية · قبل بـ24 ساعة"
+  "YOUR TABLE, PREPARED WITH CARE · SAME DAY": {
+    "fr": "VOTRE TABLE, PRÉPARÉE AVEC SOIN · LE JOUR MÊME",
+    "es": "TU MESA, PREPARADA CON CUIDADO · EL MISMO DÍA",
+    "tn": "لطاولتك بكل عناية · في نفس النهار"
   },
   "FROM OUR SOUK TO YOUR TABLE": {
     "fr": "DE NOTRE SOUK À VOTRE TABLE",
@@ -579,10 +579,10 @@ export const STRINGS = {
     "es": "A tu gusto",
     "tn": "على ذوقك"
   },
-  "Set quantities and choose your date, at least 24 hours ahead.": {
-    "fr": "Choisissez les quantités et une date au moins 24 h à l’avance.",
-    "es": "Elige cantidades y fecha con al menos 24 horas de antelación.",
-    "tn": "اختار الكمية والوقت قبل بـ24 ساعة على الأقل."
+  "Set quantities and choose your time, today or another day.": {
+    "fr": "Choisissez les quantités et l’heure, aujourd’hui ou un autre jour.",
+    "es": "Elige cantidades y hora, para hoy o para otro día.",
+    "tn": "اختار الكمية والوقت، اليوم ولا نهار آخر."
   },
   "Say hello on WhatsApp": {
     "fr": "Contactez-nous sur WhatsApp",
@@ -634,10 +634,10 @@ export const STRINGS = {
     "es": "Tus datos",
     "tn": "التفاصيل"
   },
-  "Made to order · Minimum 24 hours’ notice": {
-    "fr": "Préparé sur commande · Minimum 24 h à l’avance",
-    "es": "Preparado por encargo · Mínimo 24 horas de antelación",
-    "tn": "نحضروا بالطلب · قبل بـ24 ساعة على الأقل"
+  "Made to order · We confirm the time on WhatsApp": {
+    "fr": "Préparé sur commande · Nous confirmons l’heure sur WhatsApp",
+    "es": "Preparado por encargo · Confirmamos la hora por WhatsApp",
+    "tn": "نحضروا بالطلب · نأكدولك الوقت على واتساب"
   },
   "All fields are required except order notes.": {
     "fr": "Tous les champs sont obligatoires sauf les notes.",
@@ -674,10 +674,10 @@ export const STRINGS = {
     "es": "Fecha y hora preferidas",
     "tn": "النهار والوقت اللي تحب"
   },
-  "Madrid time. At least 24 hours from now. Subject to confirmation.": {
-    "fr": "Heure de Madrid. Au moins 24 h à partir de maintenant. À confirmer.",
-    "es": "Hora de Madrid. Al menos 24 horas desde ahora. Sujeto a confirmación.",
-    "tn": "بتوقيت مدريد. بعد 24 ساعة على الأقل من توا. يلزم يتأكد."
+  "Madrid time. Subject to confirmation.": {
+    "fr": "Heure de Madrid. À confirmer.",
+    "es": "Hora de Madrid. Sujeto a confirmación.",
+    "tn": "بتوقيت مدريد. يلزم يتأكد."
   },
   "Phone": {
     "fr": "Téléphone",
@@ -804,10 +804,10 @@ export const STRINGS = {
     "es": "Elige una fecha y hora válidas y sin ambigüedad en Madrid.",
     "tn": "اختار نهار ووقت صحيح وواضح بتوقيت مدريد."
   },
-  "Please order at least 24 hours in advance (Madrid time).": {
-    "fr": "Commandez au moins 24 h à l’avance (heure de Madrid).",
-    "es": "Pide con al menos 24 horas de antelación (hora de Madrid).",
-    "tn": "اطلب قبل بـ24 ساعة على الأقل بتوقيت مدريد."
+  "Choose a time later than now (Madrid time).": {
+    "fr": "Choisissez une heure ultérieure à maintenant (heure de Madrid).",
+    "es": "Elige una hora posterior a la actual (hora de Madrid).",
+    "tn": "اختار وقت بعد توا بتوقيت مدريد."
   },
   "Enter a valid contact phone number.": {
     "fr": "Indiquez un numéro de téléphone valide.",
@@ -1162,8 +1162,8 @@ export const STRINGS = {
 };
 // Local search copy describes the actual Tunisian menu, without claiming Moroccan dishes.
 export const SEO = {
-  en:{title:'Tunisian Food in Madrid | Couscous & Brik | The Spice Souk',description:'Tunisian couscous, brik, ojja and salads in Madrid. Delivery and takeaway by WhatsApp. Order at least 24 hours ahead; minimum order €25.',intro:'Tunisian food in Madrid: couscous, brik and traditional specialities, prepared to order for delivery or takeaway.',heading:'Tunisian cooking, delivered in Madrid',body:'Discover couscous with lamb, beef or chicken, chorba frik, brik, mechouiya salad and ojja. Choose your dishes and request delivery in Madrid city centre and surrounding areas, or takeaway, via WhatsApp.',related:'Looking for Moroccan food or North African cuisine in Madrid? Discover a different tradition: our menu is Tunisian, with its own couscous and specialities.',terms:'Order at least 24 hours ahead. Minimum order €25 for delivery and takeaway. Delivery area, fee and preferred time are confirmed on WhatsApp.',ogLocale:'en_GB'},
-  es:{title:'Comida Tunecina en Madrid | Cuscús y Brik | The Spice Souk',description:'Cuscús tunecino, brik, ojja y ensaladas en Madrid. Entrega y recogida por WhatsApp. Pide con 24 h de antelación; pedido mínimo 25 €.',intro:'Comida tunecina en Madrid: cuscús, brik y especialidades tradicionales, por encargo para entrega o recogida.',heading:'Cocina tunecina a domicilio en Madrid',body:'Descubre cuscús con cordero, ternera o pollo, chorba frik, brik, ensalada mechouiya y ojja. Elige tus platos y solicita entrega en Madrid centro y alrededores, o recogida, por WhatsApp.',related:'¿Buscas comida marroquí o cocina norteafricana en Madrid? Descubre otra tradición: nuestra carta es tunecina, con su propio cuscús y sus especialidades.',terms:'Pide con al menos 24 horas de antelación. Pedido mínimo de 25 € para entrega y recogida. La zona, el coste de entrega y la hora se confirman por WhatsApp.',ogLocale:'es_ES'},
-  fr:{title:'Cuisine Tunisienne à Madrid | Couscous et Brik | The Spice Souk',description:'Couscous tunisien, brik, ojja et salades à Madrid. Livraison et retrait sur commande par WhatsApp. Préavis de 24 h ; commande minimum 25 €.',intro:'Cuisine tunisienne à Madrid : couscous, brik et spécialités traditionnelles, sur commande en livraison ou à emporter.',heading:'Cuisine tunisienne en livraison à Madrid',body:'Découvrez le couscous à l’agneau, au bœuf ou au poulet, la chorba frik, le brik, la salade mechouiya et l’ojja. Choisissez vos plats et demandez une livraison dans le centre de Madrid et ses alentours, ou un retrait, par WhatsApp.',related:'Vous cherchez de la cuisine marocaine ou nord-africaine à Madrid ? Découvrez une autre tradition : notre carte est tunisienne, avec son propre couscous et ses spécialités.',terms:'Commandez au moins 24 heures à l’avance. Minimum de commande : 25 € en livraison et à emporter. La zone, les frais de livraison et l’horaire sont confirmés sur WhatsApp.',ogLocale:'fr_FR'},
-  tn:{title:'ماكلة تونسية في مدريد | كسكسي وبريك | The Spice Souk',description:'كسكسي، بريك، عجة وسلاطة تونسية في مدريد. توصيل ولا تجي تاخو طلبك. اطلب على واتساب قبل بـ24 ساعة؛ أقل طلب 25 €.',intro:'ماكلة تونسية في مدريد: كسكسي، بريك وأكلاتنا التقليدية، بالطلب مع التوصيل ولا تجي تاخو طلبك.',heading:'ماكلة تونسية توصلك في مدريد',body:'اختار كسكسي بالعلوش، بالبقري ولا بالدجاج، شربة فريك، بريك، سلاطة مشوية وعجة. اطلب على واتساب للتوصيل في وسط مدريد والمناطق القريبة، ولا تجي تاخو طلبك.',related:'تلوج على ماكلة مغربية ولا من شمال إفريقيا في مدريد؟ جرّب تقاليد أخرى: قايمتنا تونسية، بكسكسينا وأكلاتنا المعروفة.',terms:'اطلب قبل بـ24 ساعة على الأقل. أقل طلب 25 € للتوصيل وللأخذ من عندنا. منطقة التوصيل، سومو والوقت نأكدوهم على واتساب.',ogLocale:'ar_TN'}
+  en:{title:'Tunisian Food in Madrid | Couscous & Brik | The Spice Souk',description:'Tunisian couscous, brik, ojja and salads in Madrid. Delivery and takeaway by WhatsApp. Same-day orders, 8 h ahead; minimum order €25.',intro:'Tunisian food in Madrid: couscous, brik and traditional specialities, prepared to order for delivery or takeaway.',heading:'Tunisian cooking, delivered in Madrid',body:'Discover couscous with lamb, beef or chicken, chorba frik, brik, mechouiya salad and ojja. Choose your dishes and request delivery in Madrid city centre and surrounding areas, or takeaway, via WhatsApp.',related:'Looking for Moroccan food or North African cuisine in Madrid? Discover a different tradition: our menu is Tunisian, with its own couscous and specialities.',terms:'Same-day orders, at least 8 hours ahead. Minimum order €25 for delivery and takeaway. Delivery area, fee and preferred time are confirmed on WhatsApp.',ogLocale:'en_GB'},
+  es:{title:'Comida Tunecina en Madrid | Cuscús y Brik | The Spice Souk',description:'Cuscús tunecino, brik, ojja y ensaladas en Madrid. Entrega y recogida por WhatsApp. Pide para hoy con 8 h de antelación; pedido mínimo 25 €.',intro:'Comida tunecina en Madrid: cuscús, brik y especialidades tradicionales, por encargo para entrega o recogida.',heading:'Cocina tunecina a domicilio en Madrid',body:'Descubre cuscús con cordero, ternera o pollo, chorba frik, brik, ensalada mechouiya y ojja. Elige tus platos y solicita entrega en Madrid centro y alrededores, o recogida, por WhatsApp.',related:'¿Buscas comida marroquí o cocina norteafricana en Madrid? Descubre otra tradición: nuestra carta es tunecina, con su propio cuscús y sus especialidades.',terms:'Pide para el mismo día con al menos 8 horas de antelación. Pedido mínimo de 25 € para entrega y recogida. La zona, el coste de entrega y la hora se confirman por WhatsApp.',ogLocale:'es_ES'},
+  fr:{title:'Cuisine Tunisienne à Madrid | Couscous et Brik | The Spice Souk',description:'Couscous tunisien, brik, ojja et salades à Madrid. Livraison et retrait sur commande par WhatsApp. Commandes le jour même, 8 h à l’avance ; commande minimum 25 €.',intro:'Cuisine tunisienne à Madrid : couscous, brik et spécialités traditionnelles, sur commande en livraison ou à emporter.',heading:'Cuisine tunisienne en livraison à Madrid',body:'Découvrez le couscous à l’agneau, au bœuf ou au poulet, la chorba frik, le brik, la salade mechouiya et l’ojja. Choisissez vos plats et demandez une livraison dans le centre de Madrid et ses alentours, ou un retrait, par WhatsApp.',related:'Vous cherchez de la cuisine marocaine ou nord-africaine à Madrid ? Découvrez une autre tradition : notre carte est tunisienne, avec son propre couscous et ses spécialités.',terms:'Commandes le jour même, au moins 8 heures à l’avance. Minimum de commande : 25 € en livraison et à emporter. La zone, les frais de livraison et l’horaire sont confirmés sur WhatsApp.',ogLocale:'fr_FR'},
+  tn:{title:'ماكلة تونسية في مدريد | كسكسي وبريك | The Spice Souk',description:'كسكسي، بريك، عجة وسلاطة تونسية في مدريد. توصيل ولا تجي تاخو طلبك. اطلب على واتساب لنفس النهار، قبل بـ8 سوايع؛ أقل طلب 25 €.',intro:'ماكلة تونسية في مدريد: كسكسي، بريك وأكلاتنا التقليدية، بالطلب مع التوصيل ولا تجي تاخو طلبك.',heading:'ماكلة تونسية توصلك في مدريد',body:'اختار كسكسي بالعلوش، بالبقري ولا بالدجاج، شربة فريك، بريك، سلاطة مشوية وعجة. اطلب على واتساب للتوصيل في وسط مدريد والمناطق القريبة، ولا تجي تاخو طلبك.',related:'تلوج على ماكلة مغربية ولا من شمال إفريقيا في مدريد؟ جرّب تقاليد أخرى: قايمتنا تونسية، بكسكسينا وأكلاتنا المعروفة.',terms:'اطلب لنفس النهار قبل بـ8 سوايع على الأقل. أقل طلب 25 € للتوصيل وللأخذ من عندنا. منطقة التوصيل، سومو والوقت نأكدوهم على واتساب.',ogLocale:'ar_TN'}
 };
