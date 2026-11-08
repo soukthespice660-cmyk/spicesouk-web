@@ -11,6 +11,8 @@ function send(event){
 }
 function eventFor(link){
   const href=link.getAttribute('href')||'';
+  if(link.id==='offers-channel-link')return 'ofertas_whatsapp';
+  if(link.id==='reminder-channel-link')return 'ofertas_whatsapp_aviso';
   if(href.includes('instagram.com'))return 'instagram';
   if(href.includes('facebook.com'))return 'facebook';
   if(!href.includes('wa.me'))return null;
