@@ -95,13 +95,29 @@ export function validateOrder(cart, menu, customer, number, now=Date.now(),minim
 export function googleMapsUrl(address) {
   return `https://www.google.com/maps/search/?${new URLSearchParams({api:'1',query:clean(address)})}`;
 }
+const prettyTime = value => { const m = clean(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/); return m ? `${m[3]}/${m[2]}/${m[1]} · ${m[4]}:${m[5]}` : clean(value).replace('T', ' '); };
+const prettyPhone = value => { const raw = clean(value); const digits = raw.replace(/\D/g, ''); if (raw.startsWith('+')) return '+' + digits; if (digits.startsWith('00')) return '+' + digits.slice(2); if (/^[67]\d{8}$/.test(digits)) return '+34 ' + digits; return raw; };
 export function orderMessage(cart, menu, customer, t=value=>value) {
-  const tip=tipAmount(customer.tipCents);
+  const tip=tipAmount(customer.tipCents), sub=subtotal(cart,menu), delivery=customer.fulfilment === 'delivery';
   const items = cart.map(line => {
     const { item, unitPrice, labels } = lineDetails(line, menu);
-    return `${line.quantity} × ${item.name}${item.servingLabel ? ` — ${t(item.servingLabel)}` : ''}${labels.length ? ` (${labels.join(', ')})` : ''} — ${money(unitPrice === null ? null : unitPrice * line.quantity)}`;
+    const detail = [labels.length ? labels.join(', ') : '', item.servingLabel ? t(item.servingLabel) : ''].filter(Boolean).join(' · ');
+    return `• ${line.quantity} × ${item.name}${detail ? ` (${detail})` : ''} — ${money(unitPrice === null ? null : unitPrice * line.quantity)}`;
   });
-  return [t('THE SPICE SOUK — ORDER REQUEST'),'',...items,'',`${t('Order subtotal')}: ${money(subtotal(cart,menu))}`,`${t('Tip')}: ${money(tip)}`,`${t('Total before delivery')}: ${money(subtotal(cart,menu)+tip)}`,...(customer.fulfilment==='delivery'?[t('Delivery fee depends on your address and is confirmed on WhatsApp before we confirm your order. It is not included in the food subtotal.')]:[]),'',`${t('Full name:')} ${clean(customer.name)}`,`${t('Method:')} ${t(customer.fulfilment === 'delivery' ? 'Delivery' : 'Takeaway')}`,...(customer.fulfilment === 'delivery' ? [`${t('Address:')} ${clean(customer.address)}`,'Google Maps:',googleMapsUrl(customer.address),''] : []),`${t('Preferred time (Madrid):')} ${clean(customer.time).replace('T',' ')}`,...(clean(customer.phone) ? [`WhatsApp: ${clean(customer.phone)}`] : []),`${t('Notes:')} ${clean(customer.notes) || t('None')}`,'',t('Please confirm my order and preferred time.')].join('\n');
+  const notes = clean(customer.notes);
+  return [`*${t('THE SPICE SOUK — ORDER REQUEST')}*`,'',...items,'',
+    `${t('Order subtotal')}: ${money(sub)}`,
+    ...(tip ? [`${t('Tip')}: ${money(tip)}`] : []),
+    `*${t('Total before delivery')}: ${money(sub+tip)}*`,
+    ...(delivery ? [`_${t('Delivery fee depends on your address and is confirmed on WhatsApp before we confirm your order. It is not included in the food subtotal.')}_`] : []),'',
+    `*${t('Full name:')}* ${clean(customer.name)}`,
+    `*${t('Method:')}* ${t(delivery ? 'Delivery' : 'Takeaway')}`,
+    ...(delivery ? [`*${t('Address:')}* ${clean(customer.address)}`] : []),
+    `*${t('Preferred time (Madrid):')}* ${prettyTime(customer.time)}`,
+    ...(clean(customer.phone) ? [`*WhatsApp:* ${prettyPhone(customer.phone)}`] : []),
+    ...(notes ? [`*${t('Notes:')}* ${notes}`] : []),'',
+    t('Please confirm my order and preferred time.'),
+    ...(delivery ? ['',`Google Maps: ${googleMapsUrl(customer.address)}`] : [])].join('\n');
 }
 export function whatsappUrl(number, message) {
   if (!validNumber(number)) throw new Error('Configure a valid international WhatsApp number first.');
