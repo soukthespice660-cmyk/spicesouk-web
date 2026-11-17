@@ -16,6 +16,7 @@ function eventFor(link){
   if(href.includes('instagram.com'))return 'instagram';
   if(href.includes('facebook.com'))return 'facebook';
   if(!href.includes('wa.me'))return null;
+  if(link.classList.contains('sw-send'))return 'dulces_pedido';
   const ref=decodeURIComponent(href).match(/Ref\.\s*(\d+)/);
   if(link.classList.contains('sw-btn')&&ref)return `dulce_ref_${ref[1]}`;
   if(link.classList.contains('wa-float'))return 'whatsapp_flotante';
@@ -28,6 +29,9 @@ document.addEventListener('click',event=>{
   const link=event.target.closest&&event.target.closest('a[href]');
   const name=link&&eventFor(link);
   if(name)send(name);
+  const sweet=event.target.closest&&event.target.closest('button.sw-add');   // caja de dulces añadida al pedido
+  const num=sweet&&(sweet.dataset.ref||'').match(/\d+/);
+  if(num)send(`dulce_ref_${num[0]}`);
 },true);
 const nativeOpen=window.open;
 window.open=function(url,...rest){
